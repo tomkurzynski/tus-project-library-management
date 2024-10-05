@@ -5,7 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-public class Book {
+public final class Book extends LibraryItem{
+
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,34 +14,21 @@ public class Book {
 
     @Getter
     @Setter
-    private String title;
-
-    @Getter
-    @Setter
-    private String author;
-
-    @Getter
-    @Setter
     private String isbn;
 
-    @Enumerated(EnumType.STRING)
-    @Getter
-    @Setter
-    private BookStatus status;
-
-    public Book(){}
+    public Book(){
+        super();
+    }
 
     public Book(String title, String author, String isbn, String status) {
-        this.title = title;
-        this.author = author;
+        super(title, author, status);
         this.isbn = isbn;
-        this.status = BookStatus.AVAILABLE;
     }
 }
 
-enum BookStatus {
-    AVAILABLE,
-    BORROWED,
-    RESERVED
-}
+//enum BookStatus {
+//    AVAILABLE,
+//    BORROWED,
+//    RESERVED
+//}
 
