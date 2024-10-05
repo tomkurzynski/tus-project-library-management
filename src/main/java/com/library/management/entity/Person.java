@@ -3,7 +3,7 @@ package com.library.management.entity;
 import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class Person {
+public sealed class Person implements PersonInterface permits Member, Librarian {
     private String firstName;
     private String lastName;
     private String email;
@@ -16,26 +16,32 @@ public class Person {
         this.email = email;
     }
 
+    @Override
     public String getFirstName() {
         return firstName;
     }
 
+    @Override
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    @Override
     public String getLastName() {
         return lastName;
     }
 
+    @Override
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    @Override
     public String getEmail() {
         return email;
     }
 
+    @Override
     public void setEmail(String email) {
         this.email = email;
     }

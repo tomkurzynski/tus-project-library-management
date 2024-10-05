@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member extends Person {
+public final class Member extends Person {
 
     @Id
     @Getter
