@@ -13,7 +13,7 @@ public final class Magazine extends LibraryItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
-    private Long magazineId;
+    private int magazineId;
 
     @Getter
     @Setter
@@ -23,8 +23,8 @@ public final class Magazine extends LibraryItem {
         super();
     }
 
-    public Magazine(String title, String author, int issueNumber, String status) {
-        super(title, author, status);
+    public Magazine(String title, String author, int issueNumber) {
+        super(title, author);
         this.issueNumber = issueNumber;
     }
 }

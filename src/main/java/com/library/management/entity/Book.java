@@ -20,8 +20,8 @@ public final class Book extends LibraryItem{
         super();
     }
 
-    public Book(String title, String author, String isbn, String status) {
-        super(title, author, status);
+    public Book(String title, String author, String isbn) {
+        super(title, author);
         this.isbn = isbn;
     }
 }

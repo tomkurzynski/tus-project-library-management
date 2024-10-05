@@ -21,7 +21,7 @@ public abstract sealed class LibraryItem permits Book, Magazine{
 
         public LibraryItem() {}
 
-        public LibraryItem(String title, String author, String status) {
+        public LibraryItem(String title, String author) {
                 this.title = title;
                 this.author = author;
                 this.status = BookStatus.AVAILABLE;
