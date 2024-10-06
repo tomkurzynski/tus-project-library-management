@@ -8,8 +8,9 @@ public interface MagazineServiceInterface {
     Magazine findMagazineById(int id);
     Magazine findMagazineByTitle(String title);
     List<Magazine> findByAuthor(String author);
+    List<Magazine> getAllMagazines();
     Magazine addMagazine(Magazine magazine);
-    void updateMagazine(Magazine magazine);
+    Magazine updateMagazine(Magazine magazine);
     void deleteMagazine(int id);
 
 }

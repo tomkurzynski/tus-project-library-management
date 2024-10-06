@@ -2,7 +2,6 @@ package com.library.management.service;
 
 import com.library.management.entity.Magazine;
 import com.library.management.exception.MagazineNotFoundException;
-import com.library.management.repository.BookRepository;
 import com.library.management.repository.MagazineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +13,6 @@ public class MagazineService implements MagazineServiceInterface{
 
     @Autowired
     MagazineRepository magazineRepository;
-    @Autowired
-    private BookRepository bookRepository;
 
     @Override
     public Magazine findMagazineById(int magazineId) {
@@ -35,13 +32,18 @@ public class MagazineService implements MagazineServiceInterface{
     }
 
     @Override
+    public List<Magazine> getAllMagazines() {
+        return magazineRepository.findAll();
+    }
+
+    @Override
     public Magazine addMagazine(Magazine magazine) {
         return magazineRepository.save(magazine);
     }
 
     @Override
-    public void updateMagazine(Magazine magazine) {
-        magazineRepository.save(magazine);
+    public Magazine updateMagazine(Magazine magazine) {
+        return magazineRepository.save(magazine);
     }
 
     @Override

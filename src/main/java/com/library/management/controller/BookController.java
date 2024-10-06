@@ -29,7 +29,7 @@ public class BookController {
         return bookService.findBookByISBN(isbn);
     }
 
-    @GetMapping("/{title}")
+    @GetMapping("/title/{title}")
     public Book getBookByTitle(@PathVariable("title") String title) {
         return bookService.findBookByTitle(title);
     }
@@ -49,7 +49,6 @@ public class BookController {
         return bookService.findByAuthor(author);
     }
 
-    //delete
     @DeleteMapping("/{id}")
     public void deleteBookById(@PathVariable("id") int id) {
         bookService.deleteBook(id);
