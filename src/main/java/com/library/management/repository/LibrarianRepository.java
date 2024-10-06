@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface LibrarianRepository extends JpaRepository<Librarian, Integer> {
     Optional<Librarian> findByEmail(String email);
     Optional<Librarian> findByLastName(String lastName);
-    Optional<Librarian> findByFullName(String firstName, String lastName);
+    Optional<Librarian> findByFirstNameAndLastName(String firstName, String lastName);
 }

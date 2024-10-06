@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @MappedSuperclass
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract sealed class LibraryItem permits Book, Magazine{
 
         @Getter @Setter

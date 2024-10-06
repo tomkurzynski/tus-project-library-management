@@ -44,7 +44,7 @@ public class BookService implements BookServiceInterface{
 
     @Override
     public List<Book> getAllBooks() {
-        return bookRepository.getAllBooks();
+        return bookRepository.findAll();
     }
 
     @Override

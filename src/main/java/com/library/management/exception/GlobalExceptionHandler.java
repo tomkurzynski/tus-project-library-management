@@ -17,4 +17,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleMagazineNotFoundException(MagazineNotFoundException magazineNotFoundException) {
         return new ResponseEntity<>(magazineNotFoundException.getMessage(), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(MemberNotFoundException.class)
+    public ResponseEntity<String> handleMemberNotFoundException(MemberNotFoundException memberNotFoundException) {
+        return new ResponseEntity<>(memberNotFoundException.getMessage(), HttpStatus.NOT_FOUND);
+    }
 }
